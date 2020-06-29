@@ -3,9 +3,10 @@ import bodyParser from 'body-parser';
 import MongoClient from 'mongodb';
 
 const app = express();
+const cors = require('cors');
 
 app.use(bodyParser.json());
-
+app.use(cors());
 
 //all the database endpoint operations passed using operation as a function
 const withDB = async(operations, res) => {
